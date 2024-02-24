@@ -23,28 +23,57 @@ class DetailsViewModel @Inject constructor(
     private val _addToCart = MutableStateFlow<Resource<CartProduct>>(Resource.Unspecified())
     val addToCart = _addToCart.asStateFlow()
 
+//    fun addUpdateProductInCart(cartProduct: CartProduct) {
+//        viewModelScope.launch { _addToCart.emit(Resource.Loading()) }
+//        firestore.collection("user").document(auth.uid!!).collection("cart")
+//            .whereEqualTo("product.id", cartProduct.product.id).get()
+//            .addOnSuccessListener {
+//                it.documents.let {
+//                    if (it.isEmpty()) { //Add new product
+//                        addNewProduct(cartProduct)
+//                    } else {
+//                        val product = it.first().toObject(CartProduct::class.java)
+//                        if(product.product == cartProduct.product && product.selectedColor == cartProduct.selectedColor && product.selectedSize== cartProduct.selectedSize){ //Increase the quantity (fixed quantity increasement issue)
+//                            val documentId = it.first().id
+//                            increaseQuantity(documentId, cartProduct)
+//                        } else { //Add new product
+//                            addNewProduct(cartProduct)
+//                        }
+//                    }
+//                }
+//            }.addOnFailureListener {
+//                viewModelScope.launch { _addToCart.emit(Resource.Error(it.message.toString())) }
+//            }
+//    }
+
     fun addUpdateProductInCart(cartProduct: CartProduct) {
         viewModelScope.launch { _addToCart.emit(Resource.Loading()) }
         firestore.collection("user").document(auth.uid!!).collection("cart")
             .whereEqualTo("product.id", cartProduct.product.id).get()
-            .addOnSuccessListener {
-                it.documents.let {
-                    if (it.isEmpty()) { //Add new product
+            .addOnSuccessListener { querySnapshot ->
+                querySnapshot.documents.let { documents ->
+                    if (documents.isEmpty()) {
                         addNewProduct(cartProduct)
                     } else {
-                        val product = it.first().toObject(CartProduct::class.java)
-                        if(product.product == cardProduct.product && product.selectedColor == cardProduct.selectedColor && product.selectedSize== cardProduct.selectedSize){ //Increase the quantity (fixed quantity increasement issue)
-                            val documentId = it.first().id
+                        val product = documents.firstOrNull()?.toObject(CartProduct::class.java)
+
+                        if (product != null &&
+                            product.product == cartProduct.product &&
+                            product.selectedColor == cartProduct.selectedColor &&
+                            product.selectedSize == cartProduct.selectedSize) {
+
+                            val documentId = documents.first().id
                             increaseQuantity(documentId, cartProduct)
-                        } else { //Add new product
+                        } else {
                             addNewProduct(cartProduct)
                         }
                     }
                 }
-            }.addOnFailureListener {
-                viewModelScope.launch { _addToCart.emit(Resource.Error(it.message.toString())) }
+            }.addOnFailureListener { exception ->
+                viewModelScope.launch { _addToCart.emit(Resource.Error(exception.message.toString())) }
             }
     }
+
 
     private fun addNewProduct(cartProduct: CartProduct) {
         firebaseCommon.addProductToCart(cartProduct) { addedProduct, e ->

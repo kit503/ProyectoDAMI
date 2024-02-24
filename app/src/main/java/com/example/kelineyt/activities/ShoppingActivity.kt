@@ -12,6 +12,7 @@ import com.example.kelineyt.databinding.ActivityShoppingBinding
 import com.example.kelineyt.util.Resource
 import com.example.kelineyt.viewmodel.CartViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.FirebaseApp
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 
@@ -26,6 +27,7 @@ class ShoppingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseApp.initializeApp(this);
         setContentView(binding.root)
 
         val navController = findNavController(R.id.shoppingHostFragment)
