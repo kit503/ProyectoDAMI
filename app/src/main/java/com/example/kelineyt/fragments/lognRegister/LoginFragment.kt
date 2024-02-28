@@ -62,7 +62,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     is Resource.Loading -> {
                     }
                     is Resource.Success -> {
-                        Snackbar.make(requireView(),"Reset link was sent to your email",Snackbar.LENGTH_LONG).show()
+                        Snackbar.make(requireView(),"Link de reinicio fue enviado a tu email",Snackbar.LENGTH_LONG).show()
                     }
                     is Resource.Error -> {
                         Snackbar.make(requireView(),"Error: ${it.message}",Snackbar.LENGTH_LONG).show()

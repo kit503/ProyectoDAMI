@@ -43,12 +43,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.viewpagerHome.adapter = viewPager2Adapter
         TabLayoutMediator(binding.tabLayout, binding.viewpagerHome) { tab, position ->
             when (position) {
-                0 -> tab.text = "Main"
-                1 -> tab.text = "Chair"
-                2 -> tab.text = "Cupboard"
-                3 -> tab.text = "Table"
-                4 -> tab.text = "Accessory"
-                5 -> tab.text = "Furniture"
+                0 -> tab.text = "Inicio"
+                1 -> tab.text = "Chocotejas"
+                2 -> tab.text = "Para Regalar"
+                3 -> tab.text = "Chocolates"
+                4 -> tab.text = "Barras de Chocolate"
+                5 -> tab.text = "Bombones y Trufas"
             }
         }.attach()
     }

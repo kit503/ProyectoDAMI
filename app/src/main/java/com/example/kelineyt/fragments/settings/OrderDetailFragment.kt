@@ -40,7 +40,7 @@ class OrderDetailFragment : Fragment() {
 
         binding.apply {
 
-            tvOrderId.text = "Order #${order.orderId}"
+            tvOrderId.text = "Pedido #${order.orderId}"
 
 
             stepView.setSteps(
@@ -69,7 +69,7 @@ class OrderDetailFragment : Fragment() {
             tvAddress.text = "${order.address.street} ${order.address.city}"
             tvPhoneNumber.text = order.address.phone
 
-            tvTotalPrice.text = "$ ${order.totalPrice}"
+            tvTotalPrice.text = "S/ ${order.totalPrice}"
 
         }
 
