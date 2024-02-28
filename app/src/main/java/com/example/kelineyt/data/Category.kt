@@ -2,9 +2,9 @@ package com.example.kelineyt.data
 
 sealed class Category(val category: String) {
 
-    object Chair: Category("Chair")
-    object Cupboard: Category("Cupboard")
-    object Table: Category("Table")
-    object Accessory: Category("Accessory")
-    object Furniture: Category("Furniture")
+    object Chair: Category("Chocotejas")
+    object Cupboard: Category("Para Regalar")
+    object Table: Category("Chocolates")
+    object Accessory: Category("Barras de Chocolate")
+    object Furniture: Category("Bombones y Trufas")
 }
