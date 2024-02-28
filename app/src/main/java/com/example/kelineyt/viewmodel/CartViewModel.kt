@@ -84,10 +84,6 @@ class CartViewModel @Inject constructor(
 
         val index = cartProducts.value.data?.indexOf(cartProduct)
 
-        /**
-         * index could be equal to -1 if the function [getCartProducts] delays which will also delay the result we expect to be inside the [_cartProducts]
-         * and to prevent the app from crashing we make a check
-         */
         if (index != null && index != -1) {
             val documentId = cartProductDocuments[index].id
             when (quantityChanging) {

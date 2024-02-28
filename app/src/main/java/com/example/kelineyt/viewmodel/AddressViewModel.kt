@@ -41,7 +41,7 @@ class AddressViewModel @Inject constructor(
                 }
         } else {
             viewModelScope.launch {
-                _error.emit("All fields are required")
+                _error.emit("Todos los campos son requeridos")
             }
         }
     }
