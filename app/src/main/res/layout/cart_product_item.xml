@@ -37,7 +37,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/poppins_light"
-            android:text="Chair"
+            android:text="Ciberteja"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -52,9 +52,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_light"
-            android:text="$50"
+            android:text="S/10"
             android:textColor="@color/black"
-            android:textSize="10sp"
+            android:textSize="11sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/tvProductCartName"
             app:layout_constraintTop_toBottomOf="@id/tvProductCartName"/>
@@ -81,10 +81,6 @@
             android:layout_marginEnd="1dp"
             app:layout_constraintEnd_toEndOf="parent"/>
 
-
-
-
-
         <TextView
             android:id="@+id/tvCartProductQuantity"
             android:layout_width="wrap_content"
@@ -94,10 +90,6 @@
             app:layout_constraintEnd_toEndOf="@id/imageMinus"
             app:layout_constraintBottom_toTopOf="@id/imagePlus"
             app:layout_constraintStart_toStartOf="@id/imagePlus"/>
-
-
-
-
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageCartProductColor"
@@ -123,7 +115,7 @@
             android:id="@+id/tvCartProductSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="L"
+            android:text="G"
             android:textSize="11sp"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/imageCartProductSize"

@@ -16,7 +16,7 @@
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageOrderState"
             android:layout_width="10dp"
-            android:layout_height="10sp"
+            android:layout_height="11sp"
             android:layout_gravity="center"
             android:src="@color/black" />
 

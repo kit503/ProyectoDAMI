@@ -27,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Kleine."/>
+            android:text="Cibertejas"/>
 
         <TextView
             android:id="@+id/tvRightAddressForShopping"
@@ -67,7 +67,7 @@
             app:layout_constraintStart_toStartOf="@id/tvQuality"
             app:layout_constraintEnd_toEndOf="@id/tvQuality"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Register"/>
+            android:text="Regístrate"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonLoginAccountOptions"

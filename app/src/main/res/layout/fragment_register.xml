@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Kleine."/>
+        android:text="Cibertejas"/>
 
 
         <TextView
@@ -38,7 +38,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvAppName"
             app:layout_constraintStart_toStartOf="@id/tvAppName"
             app:layout_constraintEnd_toEndOf="@id/tvAppName"
-            android:text="Let's Register"
+            android:text="Regístrate"
             android:textAlignment="center"
             android:gravity="center"
             android:textSize="35sp"
@@ -54,7 +54,7 @@
             app:layout_constraintEnd_toEndOf="@id/tvLetsRegister"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="Do you have an account? log in"
+            android:text="¿Ya tienes una cuenta? Ingresa"
             />
 
         <EditText
@@ -65,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
             app:layout_constraintTop_toBottomOf="@id/tvDoYouHaveAccount"
             style="@style/editText"
-            android:hint="First Name"
+            android:hint="Nombre"
             android:layout_marginTop="50dp"/>
 
         <EditText
@@ -76,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
             app:layout_constraintTop_toBottomOf="@id/edFirstNameRegister"
             style="@style/editText"
-            android:hint="Last name"
+            android:hint="Apellido"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -99,7 +99,7 @@
             app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
             app:layout_constraintTop_toBottomOf="@id/edEmailRegister"
             style="@style/editText"
-            android:hint="Password"
+            android:hint="Contraseña"
             android:inputType="textPassword"
             android:layout_marginTop="10dp"/>
 
@@ -112,7 +112,7 @@
             app:layout_constraintStart_toStartOf="@id/guidelineRegisterLeft"
             app:layout_constraintEnd_toEndOf="@id/guidelineRegisterRight"
             android:layout_marginTop="15dp"
-            android:text="Register"
+            android:text="Regístrate"
             app:spinning_bar_color="@color/white"/>
 
         <ImageView
